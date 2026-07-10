@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b4f55">
+<title>Australien & Tasmanien 2026/27</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦘</text></svg>">
+<style>
+:root{
+  --teal:#0b4f55; --teal-2:#0e6a72; --coral:#ff6b57; --sand:#f7f4ee; --card:#ffffff;
+  --ink:#1d2b2d; --muted:#6b7a7c; --line:#e6e1d8;
+  --green:#1e8e5a; --amber:#c98a1b; --red:#d94f3d; --blue:#3272b5; --gray:#7d8a8c;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--sand);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:16px}
+body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+a{color:var(--teal-2)}
+button{font:inherit;border:none;background:none;cursor:pointer}
+/* Header */
+header{background:linear-gradient(135deg,#0b4f55 0%,#0e6a72 55%,#128089 100%);color:#fff;
+  padding:calc(14px + env(safe-area-inset-top)) 18px 16px;border-radius:0 0 22px 22px;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.07)}
+header::before{content:"";position:absolute;right:30px;bottom:-60px;width:120px;height:120px;border-radius:50%;background:rgba(255,107,87,.18)}
+.h-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+h1{font-size:22px;font-weight:800;margin:2px 0 4px}
+.h-sub{font-size:13px;opacity:.85}
+.h-chips{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;position:relative;z-index:1}
+.chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600}
+.chip.sync-ok{background:rgba(30,142,90,.35)}
+.chip.sync-err{background:rgba(217,79,61,.4)}
+/* Layout */
+main{padding:14px 14px 20px;max-width:640px;margin:0 auto}
+.card{background:var(--card);border-radius:16px;padding:14px;margin-bottom:10px;box-shadow:0 1px 3px rgba(29,43,45,.06);border:1px solid rgba(230,225,216,.7)}
+h2{font-size:17px;margin:14px 2px 8px;font-weight:800}
+h2:first-child{margin-top:2px}
+.muted{color:var(--muted);font-size:13px}
+.small{font-size:12px}
+/* Section pills */
+.pills{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;-webkit-overflow-scrolling:touch}
+.pill{flex:0 0 auto;border-radius:999px;padding:7px 13px;font-size:13px;font-weight:700;background:#fff;border:1px solid var(--line);color:var(--muted)}
+.pill.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+/* Day card */
+.day{display:flex;gap:12px;align-items:flex-start}
+.dnum{flex:0 0 auto;width:44px;height:44px;border-radius:14px;background:var(--sand);border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+.dnum b{font-size:16px}.dnum span{font-size:10px;color:var(--muted);text-transform:uppercase}
+.day.today .dnum{background:var(--coral);border-color:var(--coral);color:#fff}
+.day.today .dnum span{color:rgba(255,255,255,.85)}
+.dbody{flex:1;min-width:0}
+.dtitle{font-weight:700;font-size:15px}
+.dmeta{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.tag{font-size:11px;font-weight:600;border-radius:6px;padding:2px 7px;background:var(--sand);color:var(--muted);border:1px solid var(--line)}
+.tag.stay{background:#eaf3f0;color:var(--green);border-color:#d2e6dd}
+.tag.drive{background:#f0f4fa;color:var(--blue);border-color:#dbe5f2}
+.tag.note{background:#fdf1e3;color:var(--amber);border-color:#f3e2c5}
+.chev{color:#c6c0b4;font-size:18px;align-self:center}
+/* Status badge */
+.badge{font-size:11px;font-weight:700;border-radius:999px;padding:3px 9px;color:#fff;white-space:nowrap}
+.st-gebucht{background:var(--green)}.st-offen{background:var(--red)}.st-angefragt{background:var(--amber)}.st-klären,.st-pruefen{background:var(--gray)}
+/* Booking card */
+.bk{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.bk .bname{font-weight:700;font-size:15px}
+.bk .bmeta{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+/* Checklist */
+.ck{display:flex;gap:11px;align-items:flex-start}
+.ckbox{flex:0 0 auto;width:24px;height:24px;border-radius:8px;border:2px solid #cfc9bc;background:#fff;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px}
+.ck.done .ckbox{background:var(--green);border-color:var(--green)}
+.ck.done .cktxt{text-decoration:line-through;color:var(--muted)}
+.cktxt{flex:1;font-size:14.5px;line-height:1.4}
+.ckdue{font-size:11.5px;color:var(--amber);font-weight:600}
+/* Budget */
+.bsum{display:flex;gap:8px}
+.bsum .bx{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.bx .v{font-size:17px;font-weight:800}.bx .l{font-size:11px;color:var(--muted);margin-top:1px}
+.bent{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.bent .amt{font-weight:800;white-space:nowrap}
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:12px;padding:11px 16px;font-weight:700;font-size:14.5px}
+.btn-p{background:var(--teal);color:#fff}
+.btn-c{background:var(--coral);color:#fff}
+.btn-o{background:#fff;border:1.5px solid var(--line);color:var(--ink)}
+.btn-sm{padding:7px 12px;font-size:13px;border-radius:10px}
+.btn:active{opacity:.75}
+.fab{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));width:54px;height:54px;border-radius:50%;
+  background:var(--coral);color:#fff;font-size:28px;box-shadow:0 4px 14px rgba(255,107,87,.45);z-index:30;display:flex;align-items:center;justify-content:center;line-height:1}
+/* Bottom nav */
+nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);display:flex;padding:6px 4px calc(6px + env(safe-area-inset-bottom));z-index:40}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 0;color:var(--muted);font-size:10.5px;font-weight:600}
+nav button .ic{font-size:21px;line-height:1}
+nav button.on{color:var(--teal)}
+/* Modal */
+.ovl{position:fixed;inset:0;background:rgba(20,30,32,.5);z-index:60;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--sand);width:100%;max-width:640px;max-height:88vh;border-radius:20px 20px 0 0;overflow-y:auto;
+  padding:16px 16px calc(24px + env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch}
+.sheet h3{font-size:18px;font-weight:800;margin-bottom:2px;padding-right:40px}
+.xbtn{position:absolute;right:14px;top:12px;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.08);font-size:16px;color:var(--muted)}
+.sheet-wrap{position:relative}
+label.f{display:block;font-size:12.5px;font-weight:700;color:var(--muted);margin:12px 0 4px}
+input,textarea,select{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:10px 12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+textarea{min-height:84px;line-height:1.45}
+.row2{display:flex;gap:8px}.row2>*{flex:1}
+.mact{display:flex;gap:8px;margin-top:18px}
+.mact .btn{flex:1}
+.linklist a{display:flex;align-items:center;gap:7px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px;font-weight:600;text-decoration:none}
+.linklist a:last-child{border-bottom:none}
+.prog{white-space:pre-wrap;line-height:1.55;font-size:14.5px}
+.notebox{background:#fdf8ec;border:1px solid #f0e6c8;border-radius:12px;padding:10px 12px;font-size:14px;white-space:pre-wrap;line-height:1.5}
+.empty{text-align:center;color:var(--muted);padding:30px 10px;font-size:14px}
+.seghead{display:flex;justify-content:space-between;align-items:center;margin:16px 2px 8px}
+.seghead h2{margin:0}
+.del{color:var(--red);font-weight:700;font-size:13.5px}
+.sync-row{display:flex;gap:8px;margin-top:12px}
+.sync-row .btn{flex:1}
+hr.sp{border:none;border-top:1px solid var(--line);margin:16px 0}
+</style>
+</head>
+<body>
+<header id="hdr"></header>
+<main id="main"></main>
+<button class="fab" id="fab" style="display:none">+</button>
+<nav id="nav"></nav>
+<div id="modal"></div>
+
+<script>
+"use strict";
+/* ================= DATA ================= */
+const mq = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+
+const DEFAULT_DATA = {
+  v: 1,
+  updatedAt: "2026-07-10T00:00:00.000Z",
+  meta: {
+    title: "Australien & Tasmanien",
+    sub: "28.12.2026 – 21.01.2027 · 25 Tage · 2 Personen",
+    start: "2026-12-28", end: "2027-01-21",
+    rate: 0.60, budgetPerDay: 300,
+    variant: "Variante C: Rundtour ab/bis Melbourne (Lorne · Apollo Bay · Port Campbell)"
+  },
+  sections: [
+    {id:1, name:"Newcastle & Silvester", dates:"28.12.–01.01."},
+    {id:2, name:"Tasmanien", dates:"02.–13.01."},
+    {id:3, name:"Great Ocean Road", dates:"13.–21.01."}
+  ],
+  days: [
+    {n:1, date:"2026-12-28", sec:1, title:"Ankunft Newcastle", drive:"", stay:"Newcastle",
+     prog:"Ankunft abends in Newcastle. Einchecken und ankommen – ruhig angehen lassen (Jetlag).",
+     links:[{t:"Karte Newcastle",u:mq("Newcastle NSW")}], note:""},
+    {n:2, date:"2026-12-29", sec:1, title:"Bathers Way & Strände", drive:"", stay:"Newcastle",
+     prog:"Bathers Way Coastal Walk (Nobbys → Merewether, ~5 km): Bogey Hole, Ocean Baths.\nStrände: Merewether, Nobbys, Bar Beach · Fort Scratchley (Hafenblick).\nEntspannt halten – Jetlag + Party am 30.12.",
+     links:[{t:"🥾 Bathers Way (Karte)",u:mq("Bathers Way Newcastle")},{t:"Newcastle Ocean Baths",u:mq("Newcastle Ocean Baths")}], note:""},
+    {n:3, date:"2026-12-30", sec:1, title:"Strandtag & Geburtstagsparty", drive:"", stay:"Newcastle",
+     prog:"Tagsüber Strand / entspannt.\nAbends Geburtstagsparty 🎂", links:[], note:""},
+    {n:4, date:"2026-12-31", sec:1, title:"Silvester am Foreshore", drive:"", stay:"Newcastle",
+     prog:"Silvester am Foreshore/Hafen: Event ca. 17:00–21:15 Uhr, Livemusik, Food Stalls, Feuerwerk (~21 Uhr) von der Barge im Hafen.\nGute Spots: Foreshore Park, Queens Wharf, Nobbys Beach Richtung Hafen.\nLight Rail fährt verlängert/verdichtet.\n⏳ Offizielles NYE-Programm 2026 ab ~Nov prüfen (Mitternachtsfeuerwerk? Sperrzonen?).",
+     links:[{t:"NYE-Infos visitnewcastle.com.au",u:"https://visitnewcastle.com.au/whats-on/nye2025"},{t:"Foreshore Park (Karte)",u:mq("Foreshore Park Newcastle")}], note:""},
+    {n:5, date:"2027-01-01", sec:1, title:"Zusatztag Newcastle", drive:"", stay:"Newcastle",
+     prog:"Freier Tag. Optionen: Port Stephens (Delfine, Sanddünen) oder Hunter Valley (Weingüter).",
+     links:[{t:"Port Stephens (Karte)",u:mq("Port Stephens NSW")},{t:"Hunter Valley (Karte)",u:mq("Hunter Valley wine region")}], note:""},
+    {n:6, date:"2027-01-02", sec:2, title:"Flug nach Hobart ✈", drive:"", stay:"Hobart",
+     prog:"Direktflug Jetstar Newcastle (NTL) → Hobart (HBA), Ankunft ca. 17:30. GEBUCHT ✅\nÜbernachtung in Hobart.",
+     links:[{t:"Jetstar",u:"https://www.jetstar.com/au/en/flights/hobart"}], note:""},
+    {n:7, date:"2027-01-03", sec:2, title:"Camper & kunanyi/Mt Wellington", drive:"~90 km", stay:"Triabunna",
+     prog:"Camper übernehmen (Station nahe Hobart Airport).\nkunanyi/Mt Wellington: Auffahrt zum Gipfel oder Organ Pipes Track.\nNachmittags Fahrt nach Triabunna (Fährhafen Maria Island).",
+     links:[{t:"🥾 kunanyi/Mt Wellington",u:mq("kunanyi Mount Wellington Hobart")},{t:"Triabunna (Karte)",u:mq("Triabunna Tasmania")}], note:""},
+    {n:8, date:"2027-01-04", sec:2, title:"Maria Island – Tag 1 🛶", drive:"", stay:"Maria Island (Penitentiary)",
+     prog:"Fähre Triabunna → Maria Island (Encounter Maria).\nPainted Cliffs (bei Ebbe!), Wombats & Kängurus hautnah.\nÜN Penitentiary-Bunkrooms – Schlafsäcke nötig! GEBUCHT ✅",
+     links:[{t:"Fähre encountermaria.com.au",u:"https://encountermaria.com.au"},{t:"🥾 Painted Cliffs",u:mq("Painted Cliffs Maria Island")}], note:""},
+    {n:9, date:"2027-01-05", sec:2, title:"Maria Island – Tag 2 ⛰", drive:"", stay:"Maria Island (Penitentiary)",
+     prog:"Gipfeltag: Bishop & Clerk (~12 km) oder Mt Maria (~16 km).\nAbends Wombat-Watching.",
+     links:[{t:"🥾 Bishop and Clerk",u:mq("Bishop and Clerk Maria Island")}], note:""},
+    {n:10, date:"2027-01-06", sec:2, title:"Maria Island → Freycinet", drive:"~125 km", stay:"Freycinet (Coles Bay)",
+     prog:"Morgens Fossil Cliffs, dann Rückfähre.\nFahrt nach Coles Bay (Freycinet NP).",
+     links:[{t:"🥾 Fossil Cliffs",u:mq("Fossil Cliffs Maria Island")},{t:"Coles Bay (Karte)",u:mq("Coles Bay Tasmania")}], note:""},
+    {n:11, date:"2027-01-07", sec:2, title:"Wineglass Bay → Bay of Fires", drive:"~115 km", stay:"Binalong Bay / St Helens",
+     prog:"Wineglass Bay–Hazards Beach Circuit (~11 km, 4–5 h) – früh starten.\nDanach Fahrt zur Bay of Fires (Binalong Bay).",
+     links:[{t:"🥾 Wineglass Bay Circuit",u:mq("Wineglass Bay Hazards Beach Circuit")},{t:"Binalong Bay (Karte)",u:mq("Binalong Bay Tasmania")}], note:""},
+    {n:12, date:"2027-01-08", sec:2, title:"Bay of Fires → Cradle", drive:"~280 km", stay:"Cradle Mtn Fishery & Camping (Moina)",
+     prog:"Morgens Bay of Fires: Strandwalks, orange Granitfelsen.\nFahrt Richtung Cradle Mountain, Stopp Cataract Gorge (Launceston).",
+     links:[{t:"🥾 Bay of Fires",u:mq("Bay of Fires Binalong Bay")},{t:"Cataract Gorge",u:mq("Cataract Gorge Launceston")}], note:""},
+    {n:13, date:"2027-01-09", sec:2, title:"Cradle Mountain 🏔", drive:"", stay:"Cradle Mtn Fishery & Camping",
+     prog:"Dove Lake Circuit (6 km, 2 h) + Marions Lookout; Option Cradle Summit (~13 km, 6–8 h, nur bei gutem Wetter).\nShuttle-Bus ab Besucherzentrum Pflicht (Ticket mit Parkpass) – früh da sein!\nSchlechtwetter-Alternative: Rafting Mersey River (Aardvark, 155 AUD/P.) – Verfügbarkeit 3–5 Tage vorher anfragen.",
+     links:[{t:"🥾 Dove Lake Circuit",u:mq("Dove Lake Circuit Cradle Mountain")},{t:"Rafting aardvarkadventures.com.au",u:"https://www.aardvarkadventures.com.au/rafting"},{t:"Parks Tasmania",u:"https://parks.tas.gov.au"}], note:""},
+    {n:14, date:"2027-01-10", sec:2, title:"Mole Creek: Höhlen & Alum Cliffs", drive:"~40 km", stay:"Mole Creek Caravan Park",
+     prog:"Umzug nach Mole Creek.\nMole-Creek-Höhlen (Marakoopa / King Solomons), Alum Cliffs oder Mt Roland.",
+     links:[{t:"Mole Creek Caves",u:mq("Marakoopa Cave Mole Creek")},{t:"🥾 Alum Cliffs",u:mq("Alum Cliffs Mole Creek")}], note:""},
+    {n:15, date:"2027-01-11", sec:2, title:"Walls of Jerusalem (Tagestour) ⛰", drive:"", stay:"Mole Creek Caravan Park",
+     prog:"Große Tagestour (~8 h): Solomons Throne / Central Walls.\nZufahrt Mersey Forest Rd (Schotter – vorher mit Campervermieter klären). Parkpass nötig. Früh starten, Wetter checken.",
+     links:[{t:"🥾 Walls of Jerusalem NP",u:"https://parks.tas.gov.au/explore-our-parks/walls-of-jerusalem-national-park"},{t:"Parkplatz (Karte)",u:mq("Walls of Jerusalem car park Mersey Forest Road")}], note:""},
+    {n:16, date:"2027-01-12", sec:2, title:"Mt Field → Hobart", drive:"~270 km", stay:"nahe Hobart",
+     prog:"Fahrt Richtung Hobart mit Stopp im Mt Field NP: Three Falls Circuit / Russell Falls.",
+     links:[{t:"🥾 Russell Falls / Three Falls Circuit",u:mq("Russell Falls Mount Field National Park")}], note:""},
+    {n:17, date:"2027-01-13", sec:3, title:"Flug Melbourne & Surf Coast ✈", drive:"~150 km (2 h)", stay:"Lorne",
+     prog:"Camper-Rückgabe früh, Direktflug HBA → MEL vormittags (~1:15 h).\nFahrzeugübernahme MEL Airport, Fahrt zur Surf Coast.\nNachmittags: Bells Beach, Split Point Lighthouse & Küstenpfad (Aireys Inlet), Kängurus am Anglesea Golf Course.",
+     links:[{t:"Flug: Google Flights HBA–MEL",u:"https://www.google.com/travel/flights/flights-from-hobart-to-melbourne.html"},{t:"Split Point Lighthouse",u:mq("Split Point Lighthouse Aireys Inlet")},{t:"Bells Beach",u:mq("Bells Beach Torquay")}], note:""},
+    {n:18, date:"2027-01-14", sec:3, title:"Wandertag Otway-Ostrand", drive:"~30 km", stay:"Lorne",
+     prog:"Erskine Falls & Erskine River Track, Teddy's Lookout.\nGreat Ocean Walk-Auftakt: Lorne–Cumberland River oder St George River Track.\nNachmittags Baden & Abend in Lorne.",
+     links:[{t:"🥾 Erskine Falls",u:mq("Erskine Falls Lorne")},{t:"🥾 Teddy's Lookout",u:mq("Teddys Lookout Lorne")},{t:"🥾 Cumberland River",u:mq("Cumberland River Lorne walk")}], note:""},
+    {n:19, date:"2027-01-15", sec:3, title:"Koalas & Apollo Bay 🐨", drive:"~55 km (1,5 h)", stay:"Apollo Bay / Bimbi Park",
+     prog:"Kurzhüpfer nach Apollo Bay:\nKennett River Koala Walk (Grey River Rd), Cape Patton Lookout, kurze Wanderung Marriners Falls.",
+     links:[{t:"🐨 Kennett River Koala Walk",u:mq("Kennett River Koala Walk")},{t:"🥾 Marriners Falls",u:mq("Marriners Falls Apollo Bay")}], note:""},
+    {n:20, date:"2027-01-16", sec:3, title:"Großer Otway-Wandertag", drive:"~70 km", stay:"Apollo Bay / Bimbi Park",
+     prog:"Maits Rest Regenwald-Loop.\nCape Otway Lighthouse + wilde Koalas an der Lighthouse Rd.\nGreat-Ocean-Walk-Etappe: Blanket Bay ↔ Cape Otway oder Aire River.",
+     links:[{t:"🥾 Maits Rest",u:mq("Maits Rest Rainforest Walk")},{t:"Cape Otway Lighthouse",u:mq("Cape Otway Lightstation")},{t:"🥾 Great Ocean Walk",u:"https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"}], note:""},
+    {n:21, date:"2027-01-17", sec:3, title:"Wasserfälle & 12 Apostel 🌅", drive:"~95 km (1,75 h)", stay:"Port Campbell",
+     prog:"Otway-Hinterland: Triplet Falls, Otway Fly Treetop Walk oder Hopetoun/Beauchamp Falls.\nFahrt zur Shipwreck Coast.\nAbends: 12 Apostel zum Sonnenuntergang + Gibson Steps.",
+     links:[{t:"🥾 Triplet Falls",u:mq("Triplet Falls Otways")},{t:"Otway Fly",u:mq("Otway Fly Treetop Adventures")},{t:"🌅 12 Apostel",u:mq("Twelve Apostles Lookout")}], note:""},
+    {n:22, date:"2027-01-18", sec:3, title:"Shipwreck-Coast-Wandertag", drive:"~40 km", stay:"Port Campbell",
+     prog:"Gibson Steps zum Sonnenaufgang.\nLoch Ard Gorge-Rundwege (Living on the Edge, Shipwreck & Geology Walk).\nPort Campbell Discovery Walk, The Arch → London Bridge → Bay of Islands.",
+     links:[{t:"🥾 Loch Ard Gorge",u:mq("Loch Ard Gorge")},{t:"London Bridge",u:mq("London Bridge Port Campbell")},{t:"Bay of Islands",u:mq("Bay of Islands Coastal Park Peterborough")}], note:""},
+    {n:23, date:"2027-01-19", sec:3, title:"Puffertag / Great Ocean Walk-Finale", drive:"~30 km", stay:"Port Campbell",
+     prog:"Ruhiger Natur-Puffertag:\nGreat Ocean Walk-Finale – Wreck Beach mit Ankern (nur bei Ebbe!) / Gellibrand River Heads.\nOder: Port-Campbell-Strand & Two Bays Walk. Wetterpuffer, ggf. 12 Apostel nochmal.",
+     links:[{t:"🥾 Wreck Beach",u:mq("Wreck Beach Moonlight Head")},{t:"Gezeiten prüfen",u:"https://www.bom.gov.au/australia/tides/"}], note:""},
+    {n:24, date:"2027-01-20", sec:3, title:"Rückfahrt Melbourne", drive:"~230 km (3 h)", stay:"Melbourne Flughafenhotel",
+     prog:"Einziger langer Fahrtag: inland via Colac/Geelong.\nOptional Stopp Geelong Waterfront.\nFahrzeugrückgabe MEL Airport (Depots ~15 min vom Terminal), ÜN Flughafenhotel.",
+     links:[{t:"Geelong Waterfront",u:mq("Geelong Waterfront")}], note:""},
+    {n:25, date:"2027-01-21", sec:3, title:"Rückflug 🔒", drive:"", stay:"",
+     prog:"Rückflug morgens ab Melbourne.", links:[], note:""}
+  ],
+  stays: [
+    {id:"s1", name:"Newcastle", loc:"Newcastle NSW", dates:"28.12.–02.01. (5 N)", status:"klären", price:"", url:"", tel:"", conf:"", note:"Unterkunft noch klären (privat bei Freunden oder Hotel?)"},
+    {id:"s2", name:"Hobart (1 Nacht)", loc:"Hobart", dates:"02.–03.01. (1 N)", status:"offen", price:"", url:"", tel:"", conf:"", note:"Nähe Zentrum oder Airport (Camperübernahme am 03.01.)"},
+    {id:"s3", name:"Maria Island Penitentiary", loc:"Maria Island NP", dates:"04.–06.01. (2 N)", status:"gebucht", price:"~75 AUD/Nacht", url:"https://parks.tas.gov.au/explore-our-parks/maria-island-national-park/maria-island-penitentiary-accommodation", tel:"+61 3 6491 1179", conf:"", note:"Bunkrooms, Etagenbetten – Schlafsäcke mitbringen!"},
+    {id:"s4", name:"Cradle Mtn Fishery & Camping", loc:"Moina", dates:"08.–10.01. (2 N)", status:"offen", price:"", url:"https://cradlemountainfisheryandcamping.com.au/", tel:"", conf:"", note:"Basis für Cradle-Mountain-Tag"},
+    {id:"s5", name:"Mole Creek Caravan Park", loc:"Mole Creek", dates:"10.–12.01. (2 N)", status:"offen", price:"", url:"https://www.molecreekcp.com.au/", tel:"", conf:"", note:"Basis für Walls of Jerusalem"},
+    {id:"s6", name:"Campingplatz nahe Hobart", loc:"Hobart-Umgebung", dates:"12.–13.01. (1 N)", status:"offen", price:"", url:"", tel:"", conf:"", note:"Camper-Rückgabe + Flug am 13.01. früh"},
+    {id:"s7", name:"Lorne Foreshore Caravan Park", loc:"Lorne (kommunal)", dates:"13.–15.01. (2 N)", status:"offen", price:"~55–80 AUD/N", url:"https://greatoceanroadparks.com.au/find-a-park/lorne", tel:"03 5289 1382", conf:"", note:"Am Strand/Fluss, zu Fuß in den Ort. Alternative: Cumberland River Holiday Park"},
+    {id:"s8", name:"Bimbi Park – Camping Under Koalas", loc:"Cape Otway", dates:"15.–17.01. (2 N)", status:"offen", price:"~35–45 AUD/N", url:"https://bimbipark.com.au/", tel:"", conf:"", note:"⭐ Koalas überm Stellplatz, am Great Ocean Walk. Alternative: Apollo Bay Rec Reserve"},
+    {id:"s9", name:"Port Campbell Recreation Reserve", loc:"Port Campbell (kommunal)", dates:"17.–20.01. (3 N)", status:"offen", price:"~50–75 AUD/N", url:"https://greatoceanroadparks.com.au/find-a-park/port-campbell", tel:"", conf:"", note:"Zu Fuß an Bucht & Ort; ideal für 12-Apostel-Sonnenzeiten"},
+    {id:"s10", name:"PARKROYAL Melbourne Airport", loc:"MEL Airport", dates:"20.–21.01. (1 N)", status:"offen", price:"~120–200 €", url:"https://www.parkroyalhotels.com/en/hotels/australia/melbourne/melbourne-airport.html", tel:"", conf:"", note:"Direkt am Terminal (Frühflug!). Günstiger: Mantra / ibis budget"}
+  ],
+  transport: [
+    {id:"t1", name:"Internationale Flüge", typ:"Flug", dates:"28.12. Hinflug · 21.01. Rückflug morgens", status:"gebucht", price:"", url:"", conf:"", note:"Rückflug fix 🔒"},
+    {id:"t2", name:"Jetstar Newcastle → Hobart", typ:"Flug", dates:"Sa 02.01., Ankunft ~17:30", status:"gebucht", price:"", url:"https://www.jetstar.com/au/en/flights/hobart", conf:"", note:"Direktflug ✅"},
+    {id:"t3", name:"Flug Hobart → Melbourne", typ:"Flug", dates:"Mi 13.01., vormittags", status:"offen", price:"~120–300 € (2 P.)", url:"https://www.google.com/travel/flights/flights-from-hobart-to-melbourne.html", conf:"", note:"Jetstar/Qantas/Virgin, mehrmals täglich (~1:15 h). Vormittagsflug wählen!"},
+    {id:"t4", name:"Campervan Tasmanien", typ:"Camper", dates:"03.–13.01., ab/bis Hobart", status:"offen", price:"~800–1.500 € (10 Tage)", url:"https://camperchamp.com.au/australia/hobart/", conf:"", note:"Hochsaison – dringend! 130–250 AUD/Tag realistisch. JUCY/Apollo/Britz, Stationen ≤5 km v. Airport. Schotterzufahrt Walls of Jerusalem ansprechen!"},
+    {id:"t5", name:"Maria Island Fähre", typ:"Fähre", dates:"04.01. hin · 06.01. zurück", status:"offen", price:"54 AUD/P. p. Weg", url:"https://encountermaria.com.au", conf:"", note:"Encounter Maria ab Triabunna"},
+    {id:"t6", name:"Fahrzeug Melbourne (Camper/Auto)", typ:"Camper", dates:"13.–20.01., ab/bis MEL Airport", status:"offen", price:"Camper ~700–1.200 € · Auto ~300–450 €", url:"https://www.motorhomerepublic.com/", conf:"", note:"Rundreise = keine Einweggebühr. JUCY/Britz/Apollo Station Melbourne Airport"},
+    {id:"t7", name:"Tasmanien-Parkpass", typ:"Pass", dates:"gültig bis 2 Monate", status:"offen", price:"~46–96 AUD (Fahrzeug)", url:"https://parks.tas.gov.au", conf:"", note:"Deckt alle Nationalparks ab (Freycinet, Cradle, Walls, Mt Field)"},
+    {id:"t8", name:"Cradle Mountain Shuttle", typ:"Shuttle", dates:"Sa 09.01.", status:"offen", price:"", url:"https://parks.tas.gov.au", conf:"", note:"Pflicht für Dove Lake; Ticket am Besucherzentrum, früh da sein"}
+  ],
+  checklist: [
+    {id:"c1", txt:"Flug HBA→MEL (13.01., vormittags) buchen", due:"so früh wie möglich", done:false},
+    {id:"c2", txt:"Campervan Tasmanien 03.–13.01. buchen (Hochsaison!)", due:"dringend", done:false},
+    {id:"c3", txt:"Cradle Mtn Fishery & Camping buchen (08.–10.01.)", due:"", done:false},
+    {id:"c4", txt:"Mole Creek Caravan Park buchen (10.–12.01.)", due:"", done:false},
+    {id:"c5", txt:"Fahrzeug Melbourne-Teil buchen (ab/bis MEL Airport)", due:"", done:false},
+    {id:"c6", txt:"GOR-Campingplätze buchen: Lorne Foreshore · Bimbi Park · Port Campbell Rec Reserve", due:"früh – Januar-Hochsaison", done:false},
+    {id:"c7", txt:"Maria-Island-Fähre buchen (encountermaria.com.au)", due:"", done:false},
+    {id:"c8", txt:"Tasmanien-Parkpass kaufen (~46–96 AUD)", due:"vor Abflug", done:false},
+    {id:"c9", txt:"Newcastle-Unterkunft 28.12.–02.01. klären", due:"", done:false},
+    {id:"c10", txt:"Hobart-Übernachtung 02.01. buchen", due:"", done:false},
+    {id:"c11", txt:"Flughafenhotel Melbourne 20.01. buchen", due:"", done:false},
+    {id:"c12", txt:"NYE-Programm Newcastle 2026 prüfen (Mitternachtsfeuerwerk? Sperrzonen?)", due:"Nov/Dez 2026", done:false},
+    {id:"c13", txt:"Flugzeiten Jan 2027 verifizieren (Jetstar-Saisonplan)", due:"bei Buchung", done:false},
+    {id:"c14", txt:"Schotterzufahrt Mersey Forest Rd (Walls of Jerusalem) mit Campervermieter klären", due:"bei Camperbuchung", done:false},
+    {id:"c15", txt:"Schlafsäcke für Maria Island einpacken", due:"Packliste", done:false},
+    {id:"c16", txt:"Rafting Mersey River: Verfügbarkeit für 09.01. anfragen (aardvarkadventures.com.au)", due:"3–5 Tage vorher, unterwegs", done:false},
+    {id:"c17", txt:"Gezeiten checken: Painted Cliffs (04.01.) & Wreck Beach (19.01.) nur bei Ebbe", due:"unterwegs", done:false}
+  ],
+  budget: []
+};
+
+/* ================= STATE ================= */
+const LS_DATA = "oz_data_v1", LS_CFG = "oz_cfg_v1";
+let data = loadLocal();
+let cfg = JSON.parse(localStorage.getItem(LS_CFG) || "{}");
+if (cfg.auto === undefined) cfg.auto = true;
+let tab = "reise";
+let secFilter = 0; // 0 = alle
+let ghSha = null, lastRemoteStamp = null, syncState = cfg.owner ? "…" : "lokal";
+let pushTimer = null;
+
+function loadLocal(){
+  try{
+    const raw = localStorage.getItem(LS_DATA);
+    if (raw){ const d = JSON.parse(raw); if (d && d.days) return d; }
+  }catch(e){}
+  return JSON.parse(JSON.stringify(DEFAULT_DATA));
+}
+function saveLocal(){ try{ localStorage.setItem(LS_DATA, JSON.stringify(data)); }catch(e){} }
+function saveCfg(){ localStorage.setItem(LS_CFG, JSON.stringify(cfg)); }
+function markDirty(){
+  data.updatedAt = new Date().toISOString();
+  saveLocal();
+  if (cfg.owner && cfg.repo && cfg.token && cfg.auto){
+    clearTimeout(pushTimer);
+    setSync("ändert…");
+    pushTimer = setTimeout(()=>push(true), 2500);
+  } else if (cfg.owner) { setSync("lokal geändert"); }
+}
+
+/* ================= SYNC (GitHub) ================= */
+function b64enc(str){
+  const bytes = new TextEncoder().encode(str);
+  let bin = ""; const CH = 0x8000;
+  for (let i=0;i<bytes.length;i+=CH) bin += String.fromCharCode.apply(null, bytes.subarray(i,i+CH));
+  return btoa(bin);
+}
+function b64dec(b64){
+  const bin = atob(b64.replace(/\s/g,""));
+  const bytes = new Uint8Array(bin.length);
+  for (let i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+function ghUrl(){ return `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${cfg.path||"data.json"}?ref=${cfg.branch||"main"}`; }
+function ghHeaders(){
+  const h = {"Accept":"application/vnd.github+json"};
+  if (cfg.token) h["Authorization"] = "Bearer " + cfg.token.trim();
+  return h;
+}
+function setSync(s){ syncState = s; renderHeader(); }
+
+async function pull(silent){
+  if (!cfg.owner || !cfg.repo){ if(!silent) alert("Zuerst unter „Mehr“ Repo einrichten."); return false; }
+  try{
+    setSync("lädt…");
+    const res = await fetch(ghUrl() + "&t=" + Date.now(), {headers: ghHeaders(), cache:"no-store"});
+    if (res.status === 404){ setSync("keine Daten online"); ghSha = null; return false; }
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const j = await res.json();
+    ghSha = j.sha;
+    const remote = JSON.parse(b64dec(j.content));
+    lastRemoteStamp = remote.updatedAt || "";
+    if (!data.updatedAt || (remote.updatedAt && remote.updatedAt > data.updatedAt)){
+      data = remote; saveLocal(); render();
+    }
+    setSync("synchron ✓");
+    return true;
+  }catch(e){ setSync("offline/Fehler"); if(!silent) alert("Sync-Fehler beim Laden: " + e.message); return false; }
+}
+
+async function push(silent){
+  if (!cfg.owner || !cfg.repo || !cfg.token){ if(!silent) alert("Zuerst unter „Mehr“ Repo + Token einrichten."); return; }
+  try{
+    setSync("speichert…");
+    // frische sha holen + Konflikt erkennen
+    const res = await fetch(ghUrl() + "&t=" + Date.now(), {headers: ghHeaders(), cache:"no-store"});
+    if (res.ok){
+      const j = await res.json();
+      ghSha = j.sha;
+      try{
+        const remote = JSON.parse(b64dec(j.content));
+        if (remote.updatedAt && lastRemoteStamp && remote.updatedAt > lastRemoteStamp && remote.updatedAt > data.updatedAt){
+          if (!confirm("Auf GitHub gibt es neuere Änderungen (vom anderen Gerät?). Trotzdem mit diesem Stand überschreiben?\n\nAbbrechen = erst neuere Version laden.")){
+            data = remote; lastRemoteStamp = remote.updatedAt; saveLocal(); render(); setSync("synchron ✓"); return;
+          }
+        }
+      }catch(e){}
+    } else if (res.status !== 404){ throw new Error("HTTP " + res.status); }
+    const body = {message:"Reise-App: Daten aktualisiert " + new Date().toLocaleString("de-DE"),
+      content: b64enc(JSON.stringify(data, null, 1)), branch: cfg.branch || "main"};
+    if (ghSha) body.sha = ghSha;
+    const put = await fetch(ghUrl().split("?")[0], {method:"PUT", headers: ghHeaders(), body: JSON.stringify(body)});
+    if (!put.ok){ const t = await put.text(); throw new Error("HTTP " + put.status + " " + t.slice(0,120)); }
+    const pj = await put.json();
+    ghSha = pj.content && pj.content.sha;
+    lastRemoteStamp = data.updatedAt;
+    setSync("synchron ✓");
+  }catch(e){ setSync("Sync-Fehler"); if(!silent) alert("Sync-Fehler beim Speichern: " + e.message); }
+}
+
+/* ================= HELPERS ================= */
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const WD = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+function fmtDate(iso){
+  const d = new Date(iso + "T12:00:00");
+  return WD[d.getDay()] + " " + String(d.getDate()).padStart(2,"0") + "." + String(d.getMonth()+1).padStart(2,"0") + ".";
+}
+function todayISO(){ const d = new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+function uid(p){ return p + Math.random().toString(36).slice(2,8); }
+function stCls(s){ return "st-" + (s==="prüfen"?"pruefen":s); }
+function badge(s){ return `<span class="badge ${stCls(s)}">${esc(s)}</span>`; }
+function linkRow(l){ return `<a href="${esc(l.u)}" target="_blank" rel="noopener">🔗 <span>${esc(l.t)}</span></a>`; }
+
+/* ================= RENDER ================= */
+function renderHeader(){
+  const today = todayISO();
+  let cd;
+  if (today < data.meta.start){
+    const days = Math.round((new Date(data.meta.start) - new Date(today)) / 864e5);
+    cd = "✈ noch " + days + " Tage";
+  } else if (today <= data.meta.end){
+    const d = data.days.find(x=>x.date===today);
+    cd = d ? ("Heute: Tag " + d.n + " · " + d.title) : "Unterwegs!";
+  } else cd = "Reise beendet 🌏";
+  const sChip = cfg.owner ? `<span class="chip ${syncState.includes("✓")?"sync-ok":(syncState.includes("Fehler")||syncState.includes("offline")?"sync-err":"")}" onclick="pull(false)">☁ ${esc(syncState)}</span>` : "";
+  $("hdr").innerHTML = `
+    <div class="h-kicker">Reisebegleiter</div>
+    <h1>${esc(data.meta.title)} <span style="font-weight:400">2026/27</span></h1>
+    <div class="h-sub">${esc(data.meta.sub)}</div>
+    <div class="h-chips"><span class="chip">${esc(cd)}</span>${sChip}</div>`;
+}
+
+function renderNav(){
+  const items = [["reise","🗺","Reise"],["buchungen","🛏","Buchungen"],["budget","💰","Budget"],["checkliste","✅","Checkliste"],["mehr","⚙️","Mehr"]];
+  $("nav").innerHTML = items.map(i=>`<button class="${tab===i[0]?"on":""}" onclick="setTab('${i[0]}')"><span class="ic">${i[1]}</span>${i[2]}</button>`).join("");
+}
+function setTab(t){ tab = t; render(); window.scrollTo(0,0); }
+
+function render(){
+  renderHeader(); renderNav();
+  const m = $("main");
+  const fab = $("fab");
+  fab.style.display = "none";
+  if (tab==="reise") renderReise(m);
+  else if (tab==="buchungen"){ renderBuchungen(m); fab.style.display="flex"; fab.onclick = ()=>editBooking(null,"stay"); }
+  else if (tab==="budget"){ renderBudget(m); fab.style.display="flex"; fab.onclick = ()=>editBudget(null); }
+  else if (tab==="checkliste"){ renderCheck(m); fab.style.display="flex"; fab.onclick = ()=>editCheck(null); }
+  else renderMehr(m);
+}
+
+/* ---- Reise ---- */
+function renderReise(m){
+  const today = todayISO();
+  const pills = [`<button class="pill ${secFilter===0?"on":""}" onclick="setSec(0)">Alle 25 Tage</button>`]
+    .concat(data.sections.map(s=>`<button class="pill ${secFilter===s.id?"on":""}" onclick="setSec(${s.id})">${esc(s.name)}</button>`)).join("");
+  const days = data.days.filter(d=>!secFilter || d.sec===secFilter);
+  let html = `<div class="pills">${pills}</div>`;
+  html += `<div class="card" style="background:#eef4f2"><div class="small" style="color:var(--teal);font-weight:700">📍 ${esc(data.meta.variant)}</div></div>`;
+  let lastSec = null;
+  for (const d of days){
+    if (!secFilter && d.sec !== lastSec){
+      const s = data.sections.find(x=>x.id===d.sec);
+      html += `<h2>${esc(s.name)} <span class="muted" style="font-weight:400;font-size:13px">· ${esc(s.dates)}</span></h2>`;
+      lastSec = d.sec;
+    }
+    const isToday = d.date === today;
+    html += `<div class="card day ${isToday?"today":""}" onclick="openDay(${d.n})">
+      <div class="dnum"><b>${d.n}</b><span>${esc(fmtDate(d.date).slice(0,2))}</span></div>
+      <div class="dbody">
+        <div class="dtitle">${esc(fmtDate(d.date))} · ${esc(d.title)}</div>
+        <div class="dmeta">
+          ${d.stay?`<span class="tag stay">🛏 ${esc(d.stay)}</span>`:""}
+          ${d.drive?`<span class="tag drive">🚗 ${esc(d.drive)}</span>`:""}
+          ${d.note?`<span class="tag note">📝 Notiz</span>`:""}
+        </div>
+      </div><div class="chev">›</div></div>`;
+  }
+  m.innerHTML = html;
+}
+function setSec(s){ secFilter = s; render(); }
+
+function openDay(n){
+  const d = data.days.find(x=>x.n===n);
+  const links = (d.links && d.links.length) ? `<label class="f">Links & Wanderungen</label><div class="card linklist">${d.links.map(linkRow).join("")}</div>` : "";
+  const note = d.note ? `<label class="f">Notizen</label><div class="notebox">${esc(d.note)}</div>` : "";
+  sheet(`
+    <div class="muted small" style="margin-bottom:2px">Tag ${d.n} · ${esc(fmtDate(d.date))}</div>
+    <h3>${esc(d.title)}</h3>
+    <div class="dmeta" style="margin:8px 0 4px">
+      ${d.stay?`<span class="tag stay">🛏 ${esc(d.stay)}</span>`:""}
+      ${d.drive?`<span class="tag drive">🚗 ${esc(d.drive)}</span>`:""}
+    </div>
+    <label class="f">Programm</label>
+    <div class="card prog">${esc(d.prog)}</div>
+    ${links}${note}
+    <div class="mact">
+      <button class="btn btn-o" onclick="editDayNote(${d.n})">📝 Notiz</button>
+      <button class="btn btn-p" onclick="editDay(${d.n})">✏️ Bearbeiten</button>
+    </div>`);
+}
+function editDayNote(n){
+  const d = data.days.find(x=>x.n===n);
+  sheet(`
+    <h3>Notiz · Tag ${d.n}</h3>
+    <label class="f">Eure Notizen für diesen Tag</label>
+    <textarea id="f_note">${esc(d.note)}</textarea>
+    <div class="mact"><button class="btn btn-o" onclick="closeSheet()">Abbrechen</button>
+    <button class="btn btn-p" onclick="saveDayNote(${n})">Speichern</button></div>`);
+}
+function saveDayNote(n){
+  const d = data.days.find(x=>x.n===n);
+  d.note = $("f_note").value.trim();
+  markDirty(); closeSheet(); render();
+}
+function editDay(n){
+  const d = data.days.find(x=>x.n===n);
+  const linkTxt = (d.links||[]).map(l=>l.t + " | " + l.u).join("\n");
+  sheet(`
+    <h3>Tag ${d.n} bearbeiten</h3>
+    <label class="f">Titel</label><input id="f_title" value="${esc(d.title)}">
+    <label class="f">Programm</label><textarea id="f_prog" style="min-height:130px">${esc(d.prog)}</textarea>
+    <div class="row2">
+      <div><label class="f">Fahrstrecke</label><input id="f_drive" value="${esc(d.drive)}" placeholder="z. B. ~80 km"></div>
+      <div><label class="f">Übernachtung</label><input id="f_stay" value="${esc(d.stay)}"></div>
+    </div>
+    <label class="f">Links (eine Zeile je Link: Name | URL)</label>
+    <textarea id="f_links" style="min-height:90px" placeholder="Erskine Falls | https://…">${esc(linkTxt)}</textarea>
+    <div class="mact"><button class="btn btn-o" onclick="closeSheet()">Abbrechen</button>
+    <button class="btn btn-p" onclick="saveDay(${n})">Speichern</button></div>`);
+}
+function saveDay(n){
+  const d = data.days.find(x=>x.n===n);
+  d.title = $("f_title").value.trim();
+  d.prog = $("f_prog").value.trim();
+  d.drive = $("f_drive").value.trim();
+  d.stay = $("f_stay").value.trim();
+  d.links = $("f_links").value.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{
+    const i = l.indexOf("|");
+    return i>0 ? {t:l.slice(0,i).trim(), u:l.slice(i+1).trim()} : {t:l, u:mq(l)};
+  });
+  markDirty(); closeSheet(); render();
+}
+
+/* ---- Buchungen ---- */
+function renderBuchungen(m){
+  const grp = (list, kind, title, icon) => {
+    let h = `<div class="seghead"><h2>${icon} ${title}</h2><button class="btn btn-o btn-sm" onclick="editBooking(null,'${kind}')">+ Neu</button></div>`;
+    if (!list.length) h += `<div class="empty">Noch keine Einträge</div>`;
+    for (const b of list){
+      h += `<div class="card bk" onclick="openBooking('${b.id}','${kind}')">
+        <div style="min-width:0">
+          <div class="bname">${esc(b.name)}</div>
+          <div class="bmeta">${esc(b.dates)}${b.loc?" · "+esc(b.loc):""}${b.typ?" · "+esc(b.typ):""}${b.price?"<br>💶 "+esc(b.price):""}</div>
+        </div>${badge(b.status)}</div>`;
+    }
+    return h;
+  };
+  const open = data.stays.filter(b=>b.status!=="gebucht").length + data.transport.filter(b=>b.status!=="gebucht").length;
+  m.innerHTML = `<div class="card" style="background:#eef4f2"><b>${open}</b> <span class="muted">Buchungen noch offen</span></div>`
+    + grp(data.stays,"stay","Übernachtungen","🛏") + grp(data.transport,"trans","Transport & Pässe","✈");
+}
+function openBooking(id, kind){
+  const list = kind==="stay" ? data.stays : data.transport;
+  const b = list.find(x=>x.id===id);
+  sheet(`
+    <div style="margin-bottom:4px">${badge(b.status)}</div>
+    <h3>${esc(b.name)}</h3>
+    <div class="card" style="margin-top:10px">
+      <div class="bmeta" style="font-size:14px;line-height:1.7">
+        📅 ${esc(b.dates)}<br>
+        ${b.loc?"📍 "+esc(b.loc)+"<br>":""}${b.typ?"🚌 "+esc(b.typ)+"<br>":""}
+        ${b.price?"💶 "+esc(b.price)+"<br>":""}${b.tel?"📞 <a href='tel:"+esc(b.tel)+"'>"+esc(b.tel)+"</a><br>":""}
+        ${b.conf?"🎫 Buchungsnr.: <b>"+esc(b.conf)+"</b><br>":""}
+      </div>
+      ${b.url?`<div class="linklist" style="margin-top:6px">${linkRow({t:"Zur Buchungsseite",u:b.url})}</div>`:""}
+    </div>
+    ${b.note?`<div class="notebox">${esc(b.note)}</div>`:""}
+    <div class="mact">
+      <button class="btn btn-o del" onclick="delBooking('${b.id}','${kind}')">Löschen</button>
+      <button class="btn btn-p" onclick="editBooking('${b.id}','${kind}')">✏️ Bearbeiten</button>
+    </div>`);
+}
+function editBooking(id, kind){
+  const isStay = kind==="stay";
+  const list = isStay ? data.stays : data.transport;
+  const b = id ? list.find(x=>x.id===id) : {name:"",loc:"",typ:isStay?"":"Flug",dates:"",status:"offen",price:"",url:"",tel:"",conf:"",note:""};
+  const stOpts = ["offen","angefragt","gebucht","klären"].map(s=>`<option ${b.status===s?"selected":""}>${s}</option>`).join("");
+  const kindSel = id ? "" : `<label class="f">Kategorie</label><select id="f_kind"><option value="stay" ${isStay?"selected":""}>Übernachtung</option><option value="trans" ${!isStay?"selected":""}>Transport / Pass</option></select>`;
+  sheet(`
+    <h3>${id?"Buchung bearbeiten":"Neue Buchung"}</h3>
+    ${kindSel}
+    <label class="f">Name</label><input id="f_name" value="${esc(b.name)}" placeholder="z. B. Lorne Foreshore Caravan Park">
+    <div class="row2">
+      <div><label class="f">Zeitraum</label><input id="f_dates" value="${esc(b.dates)}" placeholder="13.–15.01. (2 N)"></div>
+      <div><label class="f">Status</label><select id="f_status">${stOpts}</select></div>
+    </div>
+    <div class="row2">
+      <div><label class="f">${isStay?"Ort":"Typ (Flug/Camper/…)"}</label><input id="f_lt" value="${esc(isStay?b.loc:(b.typ||""))}"></div>
+      <div><label class="f">Preis</label><input id="f_price" value="${esc(b.price)}"></div>
+    </div>
+    <label class="f">Link (Buchungsseite)</label><input id="f_url" value="${esc(b.url)}" placeholder="https://…">
+    <div class="row2">
+      <div><label class="f">Telefon</label><input id="f_tel" value="${esc(b.tel||"")}"></div>
+      <div><label class="f">Buchungsnr.</label><input id="f_conf" value="${esc(b.conf||"")}"></div>
+    </div>
+    <label class="f">Notiz</label><textarea id="f_bnote">${esc(b.note)}</textarea>
+    <div class="mact"><button class="btn btn-o" onclick="closeSheet()">Abbrechen</button>
+    <button class="btn btn-p" onclick="saveBooking('${id||""}','${kind}')">Speichern</button></div>`);
+}
+function saveBooking(id, kind){
+  let realKind = kind;
+  if (!id && $("f_kind")) realKind = $("f_kind").value;
+  const isStay = realKind==="stay";
+  const list = isStay ? data.stays : data.transport;
+  let b;
+  if (id){
+    const oldList = kind==="stay" ? data.stays : data.transport;
+    b = oldList.find(x=>x.id===id);
+  } else { b = {id:uid(isStay?"s":"t")}; list.push(b); }
+  b.name = $("f_name").value.trim();
+  b.dates = $("f_dates").value.trim();
+  b.status = $("f_status").value;
+  if (isStay) b.loc = $("f_lt").value.trim(); else b.typ = $("f_lt").value.trim();
+  b.price = $("f_price").value.trim();
+  b.url = $("f_url").value.trim();
+  b.tel = $("f_tel").value.trim();
+  b.conf = $("f_conf").value.trim();
+  b.note = $("f_bnote").value.trim();
+  markDirty(); closeSheet(); render();
+}
+function delBooking(id, kind){
+  if (!confirm("Diesen Eintrag wirklich löschen?")) return;
+  if (kind==="stay") data.stays = data.stays.filter(x=>x.id!==id);
+  else data.transport = data.transport.filter(x=>x.id!==id);
+  markDirty(); closeSheet(); render();
+}
+
+/* ---- Budget ---- */
+function renderBudget(m){
+  const rate = data.meta.rate || 0.6;
+  const toEur = e => e.cur==="EUR" ? e.amt : e.amt * rate;
+  const total = data.budget.reduce((s,e)=>s+toEur(e),0);
+  const dates = [...new Set(data.budget.map(e=>e.date))];
+  const avg = dates.length ? total/dates.length : 0;
+  const bpd = data.meta.budgetPerDay || 300;
+  const entries = [...data.budget].sort((a,b)=>b.date.localeCompare(a.date));
+  let h = `<div class="bsum">
+      <div class="bx"><div class="v">${total.toFixed(0)} €</div><div class="l">ausgegeben</div></div>
+      <div class="bx"><div class="v" style="color:${avg>bpd?"var(--red)":"var(--green)"}">${avg.toFixed(0)} €</div><div class="l">Ø pro Tag</div></div>
+      <div class="bx"><div class="v">${bpd} €</div><div class="l">Budget/Tag</div></div>
+    </div>
+    <div class="muted small" style="margin:8px 4px">Kurs: 1 AUD = ${rate.toFixed(2)} € · <a href="#" onclick="budgetSettings();return false">Budget & Kurs ändern</a></div>
+    <h2>Ausgaben</h2>`;
+  if (!entries.length) h += `<div class="empty">Noch keine Ausgaben erfasst.<br>Mit + unten rechts loslegen.</div>`;
+  for (const e of entries){
+    h += `<div class="card bent" onclick="editBudget('${e.id}')">
+      <div><b>${esc(e.desc)}</b><div class="muted small">${esc(fmtDate(e.date))} · ${esc(e.cat)}</div></div>
+      <div class="amt">${e.amt.toFixed(2)} ${e.cur}${e.cur==="AUD"?`<div class="muted small" style="text-align:right;font-weight:400">≈ ${toEur(e).toFixed(0)} €</div>`:""}</div></div>`;
+  }
+  m.innerHTML = h;
+}
+function budgetSettings(){
+  sheet(`<h3>Budget-Einstellungen</h3>
+    <div class="row2">
+      <div><label class="f">Budget pro Tag (€)</label><input id="f_bpd" type="number" value="${data.meta.budgetPerDay||300}"></div>
+      <div><label class="f">Kurs 1 AUD in €</label><input id="f_rate" type="number" step="0.01" value="${data.meta.rate||0.6}"></div>
+    </div>
+    <div class="mact"><button class="btn btn-o" onclick="closeSheet()">Abbrechen</button>
+    <button class="btn btn-p" onclick="saveBudgetSettings()">Speichern</button></div>`);
+}
+function saveBudgetSettings(){
+  data.meta.budgetPerDay = parseFloat($("f_bpd").value)||300;
+  data.meta.rate = parseFloat($("f_rate").value)||0.6;
+  markDirty(); closeSheet(); render();
+}
+function editBudget(id){
+  const e = id ? data.budget.find(x=>x.id===id) : {date:todayISO(),desc:"",amt:"",cur:"AUD",cat:"Essen"};
+  const cats = ["Essen","Camping/Hotel","Sprit","Aktivitäten","Transport","Einkauf","Sonstiges"].map(c=>`<option ${e.cat===c?"selected":""}>${c}</option>`).join("");
+  sheet(`<h3>${id?"Ausgabe bearbeiten":"Neue Ausgabe"}</h3>
+    <label class="f">Beschreibung</label><input id="f_desc" value="${esc(e.desc)}" placeholder="z. B. Abendessen Apollo Bay">
+    <div class="row2">
+      <div><label class="f">Betrag</label><input id="f_amt" type="number" step="0.01" inputmode="decimal" value="${e.amt}"></div>
+      <div><label class="f">Währung</label><select id="f_cur"><option ${e.cur==="AUD"?"selected":""}>AUD</option><option ${e.cur==="EUR"?"selected":""}>EUR</option></select></div>
+    </div>
+    <div class="row2">
+      <div><label class="f">Datum</label><input id="f_date" type="date" value="${e.date}"></div>
+      <div><label class="f">Kategorie</label><select id="f_cat">${cats}</select></div>
+    </div>
+    <div class="mact">
+      ${id?`<button class="btn btn-o del" onclick="delBudget('${id}')">Löschen</button>`:`<button class="btn btn-o" onclick="closeSheet()">Abbrechen</button>`}
+      <button class="btn btn-p" onclick="saveBudget('${id||""}')">Speichern</button>
+    </div>`);
+}
+function saveBudget(id){
+  const amt = parseFloat($("f_amt").value);
+  if (!amt || !$("f_desc").value.trim()){ alert("Bitte Beschreibung und Betrag angeben."); return; }
+  let e;
+  if (id) e = data.budget.find(x=>x.id===id);
+  else { e = {id:uid("b")}; data.budget.push(e); }
+  e.desc = $("f_desc").value.trim(); e.amt = amt; e.cur = $("f_cur").value;
+  e.date = $("f_date").value || todayISO(); e.cat = $("f_cat").value;
+  markDirty(); closeSheet(); render();
+}
+function delBudget(id){
+  data.budget = data.budget.filter(x=>x.id!==id);
+  markDirty(); closeSheet(); render();
+}
+
+/* ---- Checkliste ---- */
+function renderCheck(m){
+  const open = data.checklist.filter(c=>!c.done), done = data.checklist.filter(c=>c.done);
+  const row = c => `<div class="card ck ${c.done?"done":""}">
+      <button class="ckbox" onclick="toggleCheck('${c.id}')">${c.done?"✓":""}</button>
+      <div class="cktxt" onclick="editCheck('${c.id}')">${esc(c.txt)}${c.due?`<div class="ckdue">⏰ ${esc(c.due)}</div>`:""}</div>
+    </div>`;
+  let h = `<div class="card" style="background:#eef4f2"><b>${open.length}</b> <span class="muted">offen · ${done.length} erledigt</span></div>`;
+  h += open.map(row).join("");
+  if (done.length) h += `<h2>Erledigt</h2>` + done.map(row).join("");
+  m.innerHTML = h;
+}
+function toggleCheck(id){
+  const c = data.checklist.find(x=>x.id===id);
+  c.done = !c.done; markDirty(); render();
+}
+function editCheck(id){
+  const c = id ? data.checklist.find(x=>x.id===id) : {txt:"",due:"",done:false};
+  sheet(`<h3>${id?"To-do bearbeiten":"Neues To-do"}</h3>
+    <label class="f">Aufgabe</label><textarea id="f_txt" style="min-height:70px">${esc(c.txt)}</textarea>
+    <label class="f">Fällig / Hinweis (optional)</label><input id="f_due" value="${esc(c.due)}" placeholder="z. B. Nov 2026">
+    <div class="mact">
+      ${id?`<button class="btn btn-o del" onclick="delCheck('${id}')">Löschen</button>`:`<button class="btn btn-o" onclick="closeSheet()">Abbrechen</button>`}
+      <button class="btn btn-p" onclick="saveCheck('${id||""}')">Speichern</button>
+    </div>`);
+}
+function saveCheck(id){
+  const txt = $("f_txt").value.trim();
+  if (!txt) return;
+  let c;
+  if (id) c = data.checklist.find(x=>x.id===id);
+  else { c = {id:uid("c"), done:false}; data.checklist.push(c); }
+  c.txt = txt; c.due = $("f_due").value.trim();
+  markDirty(); closeSheet(); render();
+}
+function delCheck(id){
+  data.checklist = data.checklist.filter(x=>x.id!==id);
+  markDirty(); closeSheet(); render();
+}
+
+/* ---- Mehr / Sync ---- */
+function renderMehr(m){
+  m.innerHTML = `
+    <h2>☁ Synchronisation (GitHub)</h2>
+    <div class="card">
+      <div class="small muted" style="margin-bottom:4px">Beide iPhones synchronisieren über euer GitHub-Repo. Einrichtung: siehe ANLEITUNG.md im Repo.</div>
+      <div class="row2">
+        <div><label class="f">GitHub-Benutzername</label><input id="c_owner" value="${esc(cfg.owner||"")}" autocapitalize="off"></div>
+        <div><label class="f">Repo-Name</label><input id="c_repo" value="${esc(cfg.repo||"")}" autocapitalize="off" placeholder="reise-australien"></div>
+      </div>
+      <label class="f">Token (fine-grained, nur dieses Repo, Contents: Read & Write)</label>
+      <input id="c_token" type="password" value="${esc(cfg.token||"")}" autocapitalize="off" placeholder="github_pat_…">
+      <label class="f" style="display:flex;align-items:center;gap:8px;margin-top:14px">
+        <input type="checkbox" id="c_auto" style="width:auto" ${cfg.auto?"checked":""}> Automatisch synchronisieren
+      </label>
+      <div class="sync-row">
+        <button class="btn btn-p" onclick="saveSyncCfg()">Speichern</button>
+      </div>
+      <div class="sync-row">
+        <button class="btn btn-o" onclick="pull(false)">⬇ Laden</button>
+        <button class="btn btn-o" onclick="push(false)">⬆ Hochladen</button>
+      </div>
+      <div class="small muted" style="margin-top:8px">Status: ${esc(syncState)}</div>
+    </div>
+    <h2>💾 Backup</h2>
+    <div class="card">
+      <div class="sync-row" style="margin-top:0">
+        <button class="btn btn-o" onclick="exportJson()">Export (Datei)</button>
+        <button class="btn btn-o" onclick="$('imp').click()">Import</button>
+      </div>
+      <input type="file" id="imp" accept=".json" style="display:none" onchange="importJson(event)">
+      <button class="btn btn-o del" style="width:100%;margin-top:8px" onclick="resetData()">Auf Ausgangsplan zurücksetzen</button>
+    </div>
+    <h2>ℹ️ Reise</h2>
+    <div class="card small" style="line-height:1.7">
+      <b>${esc(data.meta.title)} 2026/27</b><br>${esc(data.meta.sub)}<br>
+      ${esc(data.meta.variant)}<br>
+      Budget vor Ort: ~250–350 €/Tag · Stil: Natur & Wandern, Campervan<br><br>
+      <span class="muted">Stand der Daten: ${data.updatedAt ? new Date(data.updatedAt).toLocaleString("de-DE") : "–"}</span>
+    </div>`;
+}
+function saveSyncCfg(){
+  cfg.owner = $("c_owner").value.trim();
+  cfg.repo = $("c_repo").value.trim();
+  cfg.token = $("c_token").value.trim();
+  cfg.branch = "main"; cfg.path = "data.json";
+  cfg.auto = $("c_auto").checked;
+  saveCfg();
+  if (cfg.owner && cfg.repo) pull(false);
+  render();
+}
+function exportJson(){
+  const blob = new Blob([JSON.stringify(data,null,2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "reise-australien-backup.json";
+  a.click();
+}
+function importJson(ev){
+  const f = ev.target.files[0]; if(!f) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try{
+      const d = JSON.parse(r.result);
+      if (!d.days) throw new Error("Ungültiges Format");
+      data = d; markDirty(); render(); alert("Import erfolgreich.");
+    }catch(e){ alert("Import fehlgeschlagen: " + e.message); }
+  };
+  r.readAsText(f);
+}
+function resetData(){
+  if (!confirm("Wirklich alle Änderungen verwerfen und den Ausgangsplan laden?")) return;
+  data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+  markDirty(); render();
+}
+
+/* ---- Modal ---- */
+function sheet(inner){
+  $("modal").innerHTML = `<div class="ovl" onclick="if(event.target===this)closeSheet()">
+    <div class="sheet"><div class="sheet-wrap"><button class="xbtn" onclick="closeSheet()">✕</button>${inner}</div></div></div>`;
+  document.body.style.overflow = "hidden";
+}
+function closeSheet(){ $("modal").innerHTML = ""; document.body.style.overflow = ""; }
+
+/* ---- Init ---- */
+render();
+if (cfg.owner && cfg.repo) pull(true);
+if ("serviceWorker" in navigator && location.protocol === "https:"){
+  navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>

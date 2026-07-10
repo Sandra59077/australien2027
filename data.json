@@ -1,0 +1,835 @@
+{
+ "v": 1,
+ "updatedAt": "2026-07-10T00:00:00.000Z",
+ "meta": {
+  "title": "Australien & Tasmanien",
+  "sub": "28.12.2026 – 21.01.2027 · 25 Tage · 2 Personen",
+  "start": "2026-12-28",
+  "end": "2027-01-21",
+  "rate": 0.6,
+  "budgetPerDay": 300,
+  "variant": "Variante C: Rundtour ab/bis Melbourne (Lorne · Apollo Bay · Port Campbell)"
+ },
+ "sections": [
+  {
+   "id": 1,
+   "name": "Newcastle & Silvester",
+   "dates": "28.12.–01.01."
+  },
+  {
+   "id": 2,
+   "name": "Tasmanien",
+   "dates": "02.–13.01."
+  },
+  {
+   "id": 3,
+   "name": "Great Ocean Road",
+   "dates": "13.–21.01."
+  }
+ ],
+ "days": [
+  {
+   "n": 1,
+   "date": "2026-12-28",
+   "sec": 1,
+   "title": "Ankunft Newcastle",
+   "drive": "",
+   "stay": "Newcastle",
+   "prog": "Ankunft abends in Newcastle. Einchecken und ankommen – ruhig angehen lassen (Jetlag).",
+   "links": [
+    {
+     "t": "Karte Newcastle",
+     "u": "https://www.google.com/maps/search/?api=1&query=Newcastle%20NSW"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 2,
+   "date": "2026-12-29",
+   "sec": 1,
+   "title": "Bathers Way & Strände",
+   "drive": "",
+   "stay": "Newcastle",
+   "prog": "Bathers Way Coastal Walk (Nobbys → Merewether, ~5 km): Bogey Hole, Ocean Baths.\nStrände: Merewether, Nobbys, Bar Beach · Fort Scratchley (Hafenblick).\nEntspannt halten – Jetlag + Party am 30.12.",
+   "links": [
+    {
+     "t": "🥾 Bathers Way (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Bathers%20Way%20Newcastle"
+    },
+    {
+     "t": "Newcastle Ocean Baths",
+     "u": "https://www.google.com/maps/search/?api=1&query=Newcastle%20Ocean%20Baths"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 3,
+   "date": "2026-12-30",
+   "sec": 1,
+   "title": "Strandtag & Geburtstagsparty",
+   "drive": "",
+   "stay": "Newcastle",
+   "prog": "Tagsüber Strand / entspannt.\nAbends Geburtstagsparty 🎂",
+   "links": [],
+   "note": ""
+  },
+  {
+   "n": 4,
+   "date": "2026-12-31",
+   "sec": 1,
+   "title": "Silvester am Foreshore",
+   "drive": "",
+   "stay": "Newcastle",
+   "prog": "Silvester am Foreshore/Hafen: Event ca. 17:00–21:15 Uhr, Livemusik, Food Stalls, Feuerwerk (~21 Uhr) von der Barge im Hafen.\nGute Spots: Foreshore Park, Queens Wharf, Nobbys Beach Richtung Hafen.\nLight Rail fährt verlängert/verdichtet.\n⏳ Offizielles NYE-Programm 2026 ab ~Nov prüfen (Mitternachtsfeuerwerk? Sperrzonen?).",
+   "links": [
+    {
+     "t": "NYE-Infos visitnewcastle.com.au",
+     "u": "https://visitnewcastle.com.au/whats-on/nye2025"
+    },
+    {
+     "t": "Foreshore Park (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Foreshore%20Park%20Newcastle"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 5,
+   "date": "2027-01-01",
+   "sec": 1,
+   "title": "Zusatztag Newcastle",
+   "drive": "",
+   "stay": "Newcastle",
+   "prog": "Freier Tag. Optionen: Port Stephens (Delfine, Sanddünen) oder Hunter Valley (Weingüter).",
+   "links": [
+    {
+     "t": "Port Stephens (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Port%20Stephens%20NSW"
+    },
+    {
+     "t": "Hunter Valley (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Hunter%20Valley%20wine%20region"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 6,
+   "date": "2027-01-02",
+   "sec": 2,
+   "title": "Flug nach Hobart ✈",
+   "drive": "",
+   "stay": "Hobart",
+   "prog": "Direktflug Jetstar Newcastle (NTL) → Hobart (HBA), Ankunft ca. 17:30. GEBUCHT ✅\nÜbernachtung in Hobart.",
+   "links": [
+    {
+     "t": "Jetstar",
+     "u": "https://www.jetstar.com/au/en/flights/hobart"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 7,
+   "date": "2027-01-03",
+   "sec": 2,
+   "title": "Camper & kunanyi/Mt Wellington",
+   "drive": "~90 km",
+   "stay": "Triabunna",
+   "prog": "Camper übernehmen (Station nahe Hobart Airport).\nkunanyi/Mt Wellington: Auffahrt zum Gipfel oder Organ Pipes Track.\nNachmittags Fahrt nach Triabunna (Fährhafen Maria Island).",
+   "links": [
+    {
+     "t": "🥾 kunanyi/Mt Wellington",
+     "u": "https://www.google.com/maps/search/?api=1&query=kunanyi%20Mount%20Wellington%20Hobart"
+    },
+    {
+     "t": "Triabunna (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Triabunna%20Tasmania"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 8,
+   "date": "2027-01-04",
+   "sec": 2,
+   "title": "Maria Island – Tag 1 🛶",
+   "drive": "",
+   "stay": "Maria Island (Penitentiary)",
+   "prog": "Fähre Triabunna → Maria Island (Encounter Maria).\nPainted Cliffs (bei Ebbe!), Wombats & Kängurus hautnah.\nÜN Penitentiary-Bunkrooms – Schlafsäcke nötig! GEBUCHT ✅",
+   "links": [
+    {
+     "t": "Fähre encountermaria.com.au",
+     "u": "https://encountermaria.com.au"
+    },
+    {
+     "t": "🥾 Painted Cliffs",
+     "u": "https://www.google.com/maps/search/?api=1&query=Painted%20Cliffs%20Maria%20Island"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 9,
+   "date": "2027-01-05",
+   "sec": 2,
+   "title": "Maria Island – Tag 2 ⛰",
+   "drive": "",
+   "stay": "Maria Island (Penitentiary)",
+   "prog": "Gipfeltag: Bishop & Clerk (~12 km) oder Mt Maria (~16 km).\nAbends Wombat-Watching.",
+   "links": [
+    {
+     "t": "🥾 Bishop and Clerk",
+     "u": "https://www.google.com/maps/search/?api=1&query=Bishop%20and%20Clerk%20Maria%20Island"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 10,
+   "date": "2027-01-06",
+   "sec": 2,
+   "title": "Maria Island → Freycinet",
+   "drive": "~125 km",
+   "stay": "Freycinet (Coles Bay)",
+   "prog": "Morgens Fossil Cliffs, dann Rückfähre.\nFahrt nach Coles Bay (Freycinet NP).",
+   "links": [
+    {
+     "t": "🥾 Fossil Cliffs",
+     "u": "https://www.google.com/maps/search/?api=1&query=Fossil%20Cliffs%20Maria%20Island"
+    },
+    {
+     "t": "Coles Bay (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Coles%20Bay%20Tasmania"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 11,
+   "date": "2027-01-07",
+   "sec": 2,
+   "title": "Wineglass Bay → Bay of Fires",
+   "drive": "~115 km",
+   "stay": "Binalong Bay / St Helens",
+   "prog": "Wineglass Bay–Hazards Beach Circuit (~11 km, 4–5 h) – früh starten.\nDanach Fahrt zur Bay of Fires (Binalong Bay).",
+   "links": [
+    {
+     "t": "🥾 Wineglass Bay Circuit",
+     "u": "https://www.google.com/maps/search/?api=1&query=Wineglass%20Bay%20Hazards%20Beach%20Circuit"
+    },
+    {
+     "t": "Binalong Bay (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Binalong%20Bay%20Tasmania"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 12,
+   "date": "2027-01-08",
+   "sec": 2,
+   "title": "Bay of Fires → Cradle",
+   "drive": "~280 km",
+   "stay": "Cradle Mtn Fishery & Camping (Moina)",
+   "prog": "Morgens Bay of Fires: Strandwalks, orange Granitfelsen.\nFahrt Richtung Cradle Mountain, Stopp Cataract Gorge (Launceston).",
+   "links": [
+    {
+     "t": "🥾 Bay of Fires",
+     "u": "https://www.google.com/maps/search/?api=1&query=Bay%20of%20Fires%20Binalong%20Bay"
+    },
+    {
+     "t": "Cataract Gorge",
+     "u": "https://www.google.com/maps/search/?api=1&query=Cataract%20Gorge%20Launceston"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 13,
+   "date": "2027-01-09",
+   "sec": 2,
+   "title": "Cradle Mountain 🏔",
+   "drive": "",
+   "stay": "Cradle Mtn Fishery & Camping",
+   "prog": "Dove Lake Circuit (6 km, 2 h) + Marions Lookout; Option Cradle Summit (~13 km, 6–8 h, nur bei gutem Wetter).\nShuttle-Bus ab Besucherzentrum Pflicht (Ticket mit Parkpass) – früh da sein!\nSchlechtwetter-Alternative: Rafting Mersey River (Aardvark, 155 AUD/P.) – Verfügbarkeit 3–5 Tage vorher anfragen.",
+   "links": [
+    {
+     "t": "🥾 Dove Lake Circuit",
+     "u": "https://www.google.com/maps/search/?api=1&query=Dove%20Lake%20Circuit%20Cradle%20Mountain"
+    },
+    {
+     "t": "Rafting aardvarkadventures.com.au",
+     "u": "https://www.aardvarkadventures.com.au/rafting"
+    },
+    {
+     "t": "Parks Tasmania",
+     "u": "https://parks.tas.gov.au"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 14,
+   "date": "2027-01-10",
+   "sec": 2,
+   "title": "Mole Creek: Höhlen & Alum Cliffs",
+   "drive": "~40 km",
+   "stay": "Mole Creek Caravan Park",
+   "prog": "Umzug nach Mole Creek.\nMole-Creek-Höhlen (Marakoopa / King Solomons), Alum Cliffs oder Mt Roland.",
+   "links": [
+    {
+     "t": "Mole Creek Caves",
+     "u": "https://www.google.com/maps/search/?api=1&query=Marakoopa%20Cave%20Mole%20Creek"
+    },
+    {
+     "t": "🥾 Alum Cliffs",
+     "u": "https://www.google.com/maps/search/?api=1&query=Alum%20Cliffs%20Mole%20Creek"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 15,
+   "date": "2027-01-11",
+   "sec": 2,
+   "title": "Walls of Jerusalem (Tagestour) ⛰",
+   "drive": "",
+   "stay": "Mole Creek Caravan Park",
+   "prog": "Große Tagestour (~8 h): Solomons Throne / Central Walls.\nZufahrt Mersey Forest Rd (Schotter – vorher mit Campervermieter klären). Parkpass nötig. Früh starten, Wetter checken.",
+   "links": [
+    {
+     "t": "🥾 Walls of Jerusalem NP",
+     "u": "https://parks.tas.gov.au/explore-our-parks/walls-of-jerusalem-national-park"
+    },
+    {
+     "t": "Parkplatz (Karte)",
+     "u": "https://www.google.com/maps/search/?api=1&query=Walls%20of%20Jerusalem%20car%20park%20Mersey%20Forest%20Road"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 16,
+   "date": "2027-01-12",
+   "sec": 2,
+   "title": "Mt Field → Hobart",
+   "drive": "~270 km",
+   "stay": "nahe Hobart",
+   "prog": "Fahrt Richtung Hobart mit Stopp im Mt Field NP: Three Falls Circuit / Russell Falls.",
+   "links": [
+    {
+     "t": "🥾 Russell Falls / Three Falls Circuit",
+     "u": "https://www.google.com/maps/search/?api=1&query=Russell%20Falls%20Mount%20Field%20National%20Park"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 17,
+   "date": "2027-01-13",
+   "sec": 3,
+   "title": "Flug Melbourne & Surf Coast ✈",
+   "drive": "~150 km (2 h)",
+   "stay": "Lorne",
+   "prog": "Camper-Rückgabe früh, Direktflug HBA → MEL vormittags (~1:15 h).\nFahrzeugübernahme MEL Airport, Fahrt zur Surf Coast.\nNachmittags: Bells Beach, Split Point Lighthouse & Küstenpfad (Aireys Inlet), Kängurus am Anglesea Golf Course.",
+   "links": [
+    {
+     "t": "Flug: Google Flights HBA–MEL",
+     "u": "https://www.google.com/travel/flights/flights-from-hobart-to-melbourne.html"
+    },
+    {
+     "t": "Split Point Lighthouse",
+     "u": "https://www.google.com/maps/search/?api=1&query=Split%20Point%20Lighthouse%20Aireys%20Inlet"
+    },
+    {
+     "t": "Bells Beach",
+     "u": "https://www.google.com/maps/search/?api=1&query=Bells%20Beach%20Torquay"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 18,
+   "date": "2027-01-14",
+   "sec": 3,
+   "title": "Wandertag Otway-Ostrand",
+   "drive": "~30 km",
+   "stay": "Lorne",
+   "prog": "Erskine Falls & Erskine River Track, Teddy's Lookout.\nGreat Ocean Walk-Auftakt: Lorne–Cumberland River oder St George River Track.\nNachmittags Baden & Abend in Lorne.",
+   "links": [
+    {
+     "t": "🥾 Erskine Falls",
+     "u": "https://www.google.com/maps/search/?api=1&query=Erskine%20Falls%20Lorne"
+    },
+    {
+     "t": "🥾 Teddy's Lookout",
+     "u": "https://www.google.com/maps/search/?api=1&query=Teddys%20Lookout%20Lorne"
+    },
+    {
+     "t": "🥾 Cumberland River",
+     "u": "https://www.google.com/maps/search/?api=1&query=Cumberland%20River%20Lorne%20walk"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 19,
+   "date": "2027-01-15",
+   "sec": 3,
+   "title": "Koalas & Apollo Bay 🐨",
+   "drive": "~55 km (1,5 h)",
+   "stay": "Apollo Bay / Bimbi Park",
+   "prog": "Kurzhüpfer nach Apollo Bay:\nKennett River Koala Walk (Grey River Rd), Cape Patton Lookout, kurze Wanderung Marriners Falls.",
+   "links": [
+    {
+     "t": "🐨 Kennett River Koala Walk",
+     "u": "https://www.google.com/maps/search/?api=1&query=Kennett%20River%20Koala%20Walk"
+    },
+    {
+     "t": "🥾 Marriners Falls",
+     "u": "https://www.google.com/maps/search/?api=1&query=Marriners%20Falls%20Apollo%20Bay"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 20,
+   "date": "2027-01-16",
+   "sec": 3,
+   "title": "Großer Otway-Wandertag",
+   "drive": "~70 km",
+   "stay": "Apollo Bay / Bimbi Park",
+   "prog": "Maits Rest Regenwald-Loop.\nCape Otway Lighthouse + wilde Koalas an der Lighthouse Rd.\nGreat-Ocean-Walk-Etappe: Blanket Bay ↔ Cape Otway oder Aire River.",
+   "links": [
+    {
+     "t": "🥾 Maits Rest",
+     "u": "https://www.google.com/maps/search/?api=1&query=Maits%20Rest%20Rainforest%20Walk"
+    },
+    {
+     "t": "Cape Otway Lighthouse",
+     "u": "https://www.google.com/maps/search/?api=1&query=Cape%20Otway%20Lightstation"
+    },
+    {
+     "t": "🥾 Great Ocean Walk",
+     "u": "https://www.parks.vic.gov.au/places-to-see/parks/great-otway-national-park"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 21,
+   "date": "2027-01-17",
+   "sec": 3,
+   "title": "Wasserfälle & 12 Apostel 🌅",
+   "drive": "~95 km (1,75 h)",
+   "stay": "Port Campbell",
+   "prog": "Otway-Hinterland: Triplet Falls, Otway Fly Treetop Walk oder Hopetoun/Beauchamp Falls.\nFahrt zur Shipwreck Coast.\nAbends: 12 Apostel zum Sonnenuntergang + Gibson Steps.",
+   "links": [
+    {
+     "t": "🥾 Triplet Falls",
+     "u": "https://www.google.com/maps/search/?api=1&query=Triplet%20Falls%20Otways"
+    },
+    {
+     "t": "Otway Fly",
+     "u": "https://www.google.com/maps/search/?api=1&query=Otway%20Fly%20Treetop%20Adventures"
+    },
+    {
+     "t": "🌅 12 Apostel",
+     "u": "https://www.google.com/maps/search/?api=1&query=Twelve%20Apostles%20Lookout"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 22,
+   "date": "2027-01-18",
+   "sec": 3,
+   "title": "Shipwreck-Coast-Wandertag",
+   "drive": "~40 km",
+   "stay": "Port Campbell",
+   "prog": "Gibson Steps zum Sonnenaufgang.\nLoch Ard Gorge-Rundwege (Living on the Edge, Shipwreck & Geology Walk).\nPort Campbell Discovery Walk, The Arch → London Bridge → Bay of Islands.",
+   "links": [
+    {
+     "t": "🥾 Loch Ard Gorge",
+     "u": "https://www.google.com/maps/search/?api=1&query=Loch%20Ard%20Gorge"
+    },
+    {
+     "t": "London Bridge",
+     "u": "https://www.google.com/maps/search/?api=1&query=London%20Bridge%20Port%20Campbell"
+    },
+    {
+     "t": "Bay of Islands",
+     "u": "https://www.google.com/maps/search/?api=1&query=Bay%20of%20Islands%20Coastal%20Park%20Peterborough"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 23,
+   "date": "2027-01-19",
+   "sec": 3,
+   "title": "Puffertag / Great Ocean Walk-Finale",
+   "drive": "~30 km",
+   "stay": "Port Campbell",
+   "prog": "Ruhiger Natur-Puffertag:\nGreat Ocean Walk-Finale – Wreck Beach mit Ankern (nur bei Ebbe!) / Gellibrand River Heads.\nOder: Port-Campbell-Strand & Two Bays Walk. Wetterpuffer, ggf. 12 Apostel nochmal.",
+   "links": [
+    {
+     "t": "🥾 Wreck Beach",
+     "u": "https://www.google.com/maps/search/?api=1&query=Wreck%20Beach%20Moonlight%20Head"
+    },
+    {
+     "t": "Gezeiten prüfen",
+     "u": "https://www.bom.gov.au/australia/tides/"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 24,
+   "date": "2027-01-20",
+   "sec": 3,
+   "title": "Rückfahrt Melbourne",
+   "drive": "~230 km (3 h)",
+   "stay": "Melbourne Flughafenhotel",
+   "prog": "Einziger langer Fahrtag: inland via Colac/Geelong.\nOptional Stopp Geelong Waterfront.\nFahrzeugrückgabe MEL Airport (Depots ~15 min vom Terminal), ÜN Flughafenhotel.",
+   "links": [
+    {
+     "t": "Geelong Waterfront",
+     "u": "https://www.google.com/maps/search/?api=1&query=Geelong%20Waterfront"
+    }
+   ],
+   "note": ""
+  },
+  {
+   "n": 25,
+   "date": "2027-01-21",
+   "sec": 3,
+   "title": "Rückflug 🔒",
+   "drive": "",
+   "stay": "",
+   "prog": "Rückflug morgens ab Melbourne.",
+   "links": [],
+   "note": ""
+  }
+ ],
+ "stays": [
+  {
+   "id": "s1",
+   "name": "Newcastle",
+   "loc": "Newcastle NSW",
+   "dates": "28.12.–02.01. (5 N)",
+   "status": "klären",
+   "price": "",
+   "url": "",
+   "tel": "",
+   "conf": "",
+   "note": "Unterkunft noch klären (privat bei Freunden oder Hotel?)"
+  },
+  {
+   "id": "s2",
+   "name": "Hobart (1 Nacht)",
+   "loc": "Hobart",
+   "dates": "02.–03.01. (1 N)",
+   "status": "offen",
+   "price": "",
+   "url": "",
+   "tel": "",
+   "conf": "",
+   "note": "Nähe Zentrum oder Airport (Camperübernahme am 03.01.)"
+  },
+  {
+   "id": "s3",
+   "name": "Maria Island Penitentiary",
+   "loc": "Maria Island NP",
+   "dates": "04.–06.01. (2 N)",
+   "status": "gebucht",
+   "price": "~75 AUD/Nacht",
+   "url": "https://parks.tas.gov.au/explore-our-parks/maria-island-national-park/maria-island-penitentiary-accommodation",
+   "tel": "+61 3 6491 1179",
+   "conf": "",
+   "note": "Bunkrooms, Etagenbetten – Schlafsäcke mitbringen!"
+  },
+  {
+   "id": "s4",
+   "name": "Cradle Mtn Fishery & Camping",
+   "loc": "Moina",
+   "dates": "08.–10.01. (2 N)",
+   "status": "offen",
+   "price": "",
+   "url": "https://cradlemountainfisheryandcamping.com.au/",
+   "tel": "",
+   "conf": "",
+   "note": "Basis für Cradle-Mountain-Tag"
+  },
+  {
+   "id": "s5",
+   "name": "Mole Creek Caravan Park",
+   "loc": "Mole Creek",
+   "dates": "10.–12.01. (2 N)",
+   "status": "offen",
+   "price": "",
+   "url": "https://www.molecreekcp.com.au/",
+   "tel": "",
+   "conf": "",
+   "note": "Basis für Walls of Jerusalem"
+  },
+  {
+   "id": "s6",
+   "name": "Campingplatz nahe Hobart",
+   "loc": "Hobart-Umgebung",
+   "dates": "12.–13.01. (1 N)",
+   "status": "offen",
+   "price": "",
+   "url": "",
+   "tel": "",
+   "conf": "",
+   "note": "Camper-Rückgabe + Flug am 13.01. früh"
+  },
+  {
+   "id": "s7",
+   "name": "Lorne Foreshore Caravan Park",
+   "loc": "Lorne (kommunal)",
+   "dates": "13.–15.01. (2 N)",
+   "status": "offen",
+   "price": "~55–80 AUD/N",
+   "url": "https://greatoceanroadparks.com.au/find-a-park/lorne",
+   "tel": "03 5289 1382",
+   "conf": "",
+   "note": "Am Strand/Fluss, zu Fuß in den Ort. Alternative: Cumberland River Holiday Park"
+  },
+  {
+   "id": "s8",
+   "name": "Bimbi Park – Camping Under Koalas",
+   "loc": "Cape Otway",
+   "dates": "15.–17.01. (2 N)",
+   "status": "offen",
+   "price": "~35–45 AUD/N",
+   "url": "https://bimbipark.com.au/",
+   "tel": "",
+   "conf": "",
+   "note": "⭐ Koalas überm Stellplatz, am Great Ocean Walk. Alternative: Apollo Bay Rec Reserve"
+  },
+  {
+   "id": "s9",
+   "name": "Port Campbell Recreation Reserve",
+   "loc": "Port Campbell (kommunal)",
+   "dates": "17.–20.01. (3 N)",
+   "status": "offen",
+   "price": "~50–75 AUD/N",
+   "url": "https://greatoceanroadparks.com.au/find-a-park/port-campbell",
+   "tel": "",
+   "conf": "",
+   "note": "Zu Fuß an Bucht & Ort; ideal für 12-Apostel-Sonnenzeiten"
+  },
+  {
+   "id": "s10",
+   "name": "PARKROYAL Melbourne Airport",
+   "loc": "MEL Airport",
+   "dates": "20.–21.01. (1 N)",
+   "status": "offen",
+   "price": "~120–200 €",
+   "url": "https://www.parkroyalhotels.com/en/hotels/australia/melbourne/melbourne-airport.html",
+   "tel": "",
+   "conf": "",
+   "note": "Direkt am Terminal (Frühflug!). Günstiger: Mantra / ibis budget"
+  }
+ ],
+ "transport": [
+  {
+   "id": "t1",
+   "name": "Internationale Flüge",
+   "typ": "Flug",
+   "dates": "28.12. Hinflug · 21.01. Rückflug morgens",
+   "status": "gebucht",
+   "price": "",
+   "url": "",
+   "conf": "",
+   "note": "Rückflug fix 🔒"
+  },
+  {
+   "id": "t2",
+   "name": "Jetstar Newcastle → Hobart",
+   "typ": "Flug",
+   "dates": "Sa 02.01., Ankunft ~17:30",
+   "status": "gebucht",
+   "price": "",
+   "url": "https://www.jetstar.com/au/en/flights/hobart",
+   "conf": "",
+   "note": "Direktflug ✅"
+  },
+  {
+   "id": "t3",
+   "name": "Flug Hobart → Melbourne",
+   "typ": "Flug",
+   "dates": "Mi 13.01., vormittags",
+   "status": "offen",
+   "price": "~120–300 € (2 P.)",
+   "url": "https://www.google.com/travel/flights/flights-from-hobart-to-melbourne.html",
+   "conf": "",
+   "note": "Jetstar/Qantas/Virgin, mehrmals täglich (~1:15 h). Vormittagsflug wählen!"
+  },
+  {
+   "id": "t4",
+   "name": "Campervan Tasmanien",
+   "typ": "Camper",
+   "dates": "03.–13.01., ab/bis Hobart",
+   "status": "offen",
+   "price": "~800–1.500 € (10 Tage)",
+   "url": "https://camperchamp.com.au/australia/hobart/",
+   "conf": "",
+   "note": "Hochsaison – dringend! 130–250 AUD/Tag realistisch. JUCY/Apollo/Britz, Stationen ≤5 km v. Airport. Schotterzufahrt Walls of Jerusalem ansprechen!"
+  },
+  {
+   "id": "t5",
+   "name": "Maria Island Fähre",
+   "typ": "Fähre",
+   "dates": "04.01. hin · 06.01. zurück",
+   "status": "offen",
+   "price": "54 AUD/P. p. Weg",
+   "url": "https://encountermaria.com.au",
+   "conf": "",
+   "note": "Encounter Maria ab Triabunna"
+  },
+  {
+   "id": "t6",
+   "name": "Fahrzeug Melbourne (Camper/Auto)",
+   "typ": "Camper",
+   "dates": "13.–20.01., ab/bis MEL Airport",
+   "status": "offen",
+   "price": "Camper ~700–1.200 € · Auto ~300–450 €",
+   "url": "https://www.motorhomerepublic.com/",
+   "conf": "",
+   "note": "Rundreise = keine Einweggebühr. JUCY/Britz/Apollo Station Melbourne Airport"
+  },
+  {
+   "id": "t7",
+   "name": "Tasmanien-Parkpass",
+   "typ": "Pass",
+   "dates": "gültig bis 2 Monate",
+   "status": "offen",
+   "price": "~46–96 AUD (Fahrzeug)",
+   "url": "https://parks.tas.gov.au",
+   "conf": "",
+   "note": "Deckt alle Nationalparks ab (Freycinet, Cradle, Walls, Mt Field)"
+  },
+  {
+   "id": "t8",
+   "name": "Cradle Mountain Shuttle",
+   "typ": "Shuttle",
+   "dates": "Sa 09.01.",
+   "status": "offen",
+   "price": "",
+   "url": "https://parks.tas.gov.au",
+   "conf": "",
+   "note": "Pflicht für Dove Lake; Ticket am Besucherzentrum, früh da sein"
+  }
+ ],
+ "checklist": [
+  {
+   "id": "c1",
+   "txt": "Flug HBA→MEL (13.01., vormittags) buchen",
+   "due": "so früh wie möglich",
+   "done": false
+  },
+  {
+   "id": "c2",
+   "txt": "Campervan Tasmanien 03.–13.01. buchen (Hochsaison!)",
+   "due": "dringend",
+   "done": false
+  },
+  {
+   "id": "c3",
+   "txt": "Cradle Mtn Fishery & Camping buchen (08.–10.01.)",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c4",
+   "txt": "Mole Creek Caravan Park buchen (10.–12.01.)",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c5",
+   "txt": "Fahrzeug Melbourne-Teil buchen (ab/bis MEL Airport)",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c6",
+   "txt": "GOR-Campingplätze buchen: Lorne Foreshore · Bimbi Park · Port Campbell Rec Reserve",
+   "due": "früh – Januar-Hochsaison",
+   "done": false
+  },
+  {
+   "id": "c7",
+   "txt": "Maria-Island-Fähre buchen (encountermaria.com.au)",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c8",
+   "txt": "Tasmanien-Parkpass kaufen (~46–96 AUD)",
+   "due": "vor Abflug",
+   "done": false
+  },
+  {
+   "id": "c9",
+   "txt": "Newcastle-Unterkunft 28.12.–02.01. klären",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c10",
+   "txt": "Hobart-Übernachtung 02.01. buchen",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c11",
+   "txt": "Flughafenhotel Melbourne 20.01. buchen",
+   "due": "",
+   "done": false
+  },
+  {
+   "id": "c12",
+   "txt": "NYE-Programm Newcastle 2026 prüfen (Mitternachtsfeuerwerk? Sperrzonen?)",
+   "due": "Nov/Dez 2026",
+   "done": false
+  },
+  {
+   "id": "c13",
+   "txt": "Flugzeiten Jan 2027 verifizieren (Jetstar-Saisonplan)",
+   "due": "bei Buchung",
+   "done": false
+  },
+  {
+   "id": "c14",
+   "txt": "Schotterzufahrt Mersey Forest Rd (Walls of Jerusalem) mit Campervermieter klären",
+   "due": "bei Camperbuchung",
+   "done": false
+  },
+  {
+   "id": "c15",
+   "txt": "Schlafsäcke für Maria Island einpacken",
+   "due": "Packliste",
+   "done": false
+  },
+  {
+   "id": "c16",
+   "txt": "Rafting Mersey River: Verfügbarkeit für 09.01. anfragen (aardvarkadventures.com.au)",
+   "due": "3–5 Tage vorher, unterwegs",
+   "done": false
+  },
+  {
+   "id": "c17",
+   "txt": "Gezeiten checken: Painted Cliffs (04.01.) & Wreck Beach (19.01.) nur bei Ebbe",
+   "due": "unterwegs",
+   "done": false
+  }
+ ],
+ "budget": []
+}
