@@ -1,5 +1,5 @@
 // Offline-Cache für die Reise-App (App-Shell; Daten liegen in localStorage/GitHub)
-const CACHE = "oz-trip-v1";
+const CACHE = "oz-trip-v2";
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "./index.html"])));
   self.skipWaiting();
