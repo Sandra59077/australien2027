@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updatedAt": "2026-07-28T12:00:00.000Z",
+ "updatedAt": "2026-07-28T14:04:19.376Z",
  "meta": {
   "title": "Australien & Tasmanien",
   "sub": "28.12.2026 – 21.01.2027 · 25 Tage · 2 Personen",
@@ -846,7 +846,7 @@
    "id": "c10",
    "txt": "Newcastle-Unterkunft 28.12.–02.01. klären",
    "due": "",
-   "done": false
+   "done": true
   },
   {
    "id": "c11",
