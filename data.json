@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updatedAt": "2026-07-28T14:08:48.514Z",
+ "updatedAt": "2026-11-18T17:00:03.859Z",
  "meta": {
   "title": "Australien & Tasmanien",
   "sub": "28.12.2026 – 21.01.2027 · 25 Tage · 2 Personen",
@@ -798,7 +798,7 @@
    "id": "c2",
    "txt": "Freycinet-Ballot: Ergebnis prüfen (~07.08.) – bei Zusage Zahlung bis 14.09., 15 Uhr!",
    "due": "07.08. / 14.09.2026",
-   "done": false
+   "done": true
   },
   {
    "id": "c3",
